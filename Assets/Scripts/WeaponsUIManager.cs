@@ -35,7 +35,15 @@ public class WeaponsUIManager : MonoBehaviour
                 shotgunPanel.SetActive(true);
             }
         }
-        if(SaveScript.inventoryOpen == true)
+        if (SaveScript.weaponID == 6)
+        {
+            if (panelOn == false)
+            {
+                panelOn = true;
+                sprayPanel.SetActive(true);
+            }
+        }
+        if (SaveScript.inventoryOpen == true)
         {
             pistolPanel.SetActive(false);
             shotgunPanel.SetActive(false);

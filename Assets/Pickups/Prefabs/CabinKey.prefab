@@ -116,6 +116,7 @@ GameObject:
   - component: {fileID: 1704240109086662169}
   - component: {fileID: 6254727953552673690}
   - component: {fileID: 4653332358293177782}
+  - component: {fileID: 1428411421}
   m_Layer: 8
   m_Name: CabinKey
   m_TagString: item
@@ -139,7 +140,7 @@ Transform:
   - {fileID: 5079784435492651807}
   - {fileID: 4512806121109991547}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 90}
 --- !u!205 &1704240109086662169
 LODGroup:
@@ -194,6 +195,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chooseItem: 11
+--- !u!95 &1428411421
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5141229719992407852}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a962b9ed878ded64e97e67e251ebe138, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5404389007001525945
 GameObject:
   m_ObjectHideFlags: 0

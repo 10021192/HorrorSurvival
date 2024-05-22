@@ -7,10 +7,10 @@ public class SaveScript : MonoBehaviour
 {
     public static bool inventoryOpen = false;
     public static int weaponID = 0;
-    public static bool[] weaponsPickedUp = new bool[8];
+    public static bool[] weaponsPickedUp = new bool[9];
     public static int itemID = 0;
     public static bool[] itemsPickedUp = new bool[13];
-    public static int[] weaponAmounts= new int[8];
+    public static int[] weaponAmounts= new int[9];
     public static int[] itemAmounts = new int[13];
     public static bool change = false;
     public static int[] ammoAmounts = new int[2];
@@ -20,12 +20,11 @@ public class SaveScript : MonoBehaviour
     void Start()
     {
         weaponsPickedUp[0] = true;
-
+        weaponAmounts[0] = 1;
         itemsPickedUp[0] = true;
         itemsPickedUp[1] = true;
         itemAmounts[0] = 1;
         itemAmounts[1] = 1;
-
         ammoAmounts[0] = 12;
         ammoAmounts[1] = 2;
 
@@ -34,6 +33,7 @@ public class SaveScript : MonoBehaviour
             currentAmmo[i] = 2;
         }
         currentAmmo[4] = 12;
+        currentAmmo[6] = 0;
     }
 
     // Update is called once per frame

@@ -21,6 +21,7 @@ public class WeaponInventory : MonoBehaviour
     public GameObject useButton, combineButton;
     public GameObject combinePanel, combineUseButton;
     public Image[] combineItems;
+    public GameObject sprayPanel;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +31,7 @@ public class WeaponInventory : MonoBehaviour
         bigIcon.sprite = bigIcons[0];
         title.text = titles[0];
         description.text = descriptions[0];
+        amountsText.text = "Amounts: 1";
 
         combinePanel.SetActive(false);
         combineButton.SetActive(false);
@@ -74,6 +76,13 @@ public class WeaponInventory : MonoBehaviour
         {
             combineItems[1].color = new Color(1, 1, 1, 0.06f);
         }
+
+        if (SaveScript.weaponAmounts[chosenWeaponNumber] <= 0)
+        {
+            ChooseWeapon(0);
+        }
+
+        ChooseWeapon(chosenWeaponNumber);
     }
 
     public void ChooseWeapon(int weaponNumber)
@@ -81,8 +90,11 @@ public class WeaponInventory : MonoBehaviour
         bigIcon.sprite = bigIcons[weaponNumber];
         title.text = titles[weaponNumber];
         description.text = descriptions[weaponNumber];
-        audioPlayer.clip = click;
-        audioPlayer.Play();
+        if(audioPlayer != null)
+        {
+            audioPlayer.clip = click;
+            audioPlayer.Play();
+        }
         chosenWeaponNumber = weaponNumber;
         amountsText.text = "Amount: " + SaveScript.weaponAmounts[weaponNumber];
 
@@ -95,6 +107,15 @@ public class WeaponInventory : MonoBehaviour
         {
             combinePanel.SetActive(false);
             combineButton.SetActive(false);
+        }
+
+        if(chosenWeaponNumber == 6)
+        {
+            useButton.SetActive(false);
+        }
+        else
+        {
+            useButton.SetActive(true);
         }
     }
 
@@ -134,6 +155,10 @@ public class WeaponInventory : MonoBehaviour
         if(chosenWeaponNumber == 6)
         {
             SaveScript.weaponID = chosenWeaponNumber;
+            if(sprayPanel.GetComponent<SprayScript>().sprayAmount <= 0.0f)
+            {
+                sprayPanel.GetComponent<SprayScript>().sprayAmount = 1.0f;
+            }
         }
         if (chosenWeaponNumber == 7)
         {

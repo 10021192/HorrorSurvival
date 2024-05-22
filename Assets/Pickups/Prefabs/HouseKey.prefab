@@ -116,6 +116,7 @@ GameObject:
   - component: {fileID: 6990396714759104933}
   - component: {fileID: 603181877281645603}
   - component: {fileID: 5901684773585032958}
+  - component: {fileID: 1340202159}
   m_Layer: 8
   m_Name: HouseKey
   m_TagString: item
@@ -139,7 +140,7 @@ Transform:
   - {fileID: 257565223256371528}
   - {fileID: 5913945786085688217}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!205 &6990396714759104933
 LODGroup:
@@ -194,6 +195,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chooseItem: 10
+--- !u!95 &1340202159
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8335021613272727624}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a962b9ed878ded64e97e67e251ebe138, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8452019436307759176
 GameObject:
   m_ObjectHideFlags: 0
