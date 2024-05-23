@@ -88,11 +88,15 @@ public class PickupsScript : MonoBehaviour
                 }
                 else if (hit.transform.gameObject.CompareTag("door"))
                 {
+                    SaveScript.doorObject = hit.transform.gameObject;
                     objID = (int)hit.transform.gameObject.GetComponent<DoorType>().chooseDoor;
                     if(hit.transform.gameObject.GetComponent<DoorType>().locked == true)
                     {
-
                         hit.transform.gameObject.GetComponent<DoorType>().message = "Locked. Need to use the " + hit.transform.gameObject.GetComponent<DoorType>().chooseDoor + " key";
+                    }
+                    if (hit.transform.gameObject.GetComponent<DoorType>().locked == false)
+                    {
+                        hit.transform.gameObject.GetComponent<DoorType>().message = "Press E to open the door";
                     }
                     doorMessageObj.SetActive(true);
                     doorMessage.text = hit.transform.gameObject.GetComponent<DoorType>().message;
@@ -121,6 +125,7 @@ public class PickupsScript : MonoBehaviour
             {
                 pickupPanel.SetActive(false);
                 doorMessageObj.SetActive(false);
+                SaveScript.doorObject = null;
             }
         }
     }

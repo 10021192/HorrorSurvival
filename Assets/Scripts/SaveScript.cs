@@ -18,12 +18,13 @@ public class SaveScript : MonoBehaviour
     public static float stamina;
     public static float infection;
     public static int health;
+    public static GameObject doorObject;
 
     // Start is called before the first frame update
     void Start()
     {
         stamina = FirstPersonController.FPSstamina;
-        health = 100;
+        health = 99;
         weaponsPickedUp[0] = true;
         weaponAmounts[0] = 1;
         itemsPickedUp[0] = true;
@@ -62,6 +63,10 @@ public class SaveScript : MonoBehaviour
         {
             FirstPersonController.FPSstamina += 3.35f * Time.deltaTime;
             stamina = FirstPersonController.FPSstamina;
+        }
+        if(stamina >= 100)
+        {
+            FirstPersonController.FPSstamina = stamina;
         }
         if(infection < 50)
         {
