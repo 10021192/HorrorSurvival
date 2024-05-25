@@ -19,6 +19,7 @@ public class SaveScript : MonoBehaviour
     public static float infection;
     public static int health;
     public static GameObject doorObject;
+    public static List<GameObject> zombiesChasing = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
