@@ -63,7 +63,7 @@ public class WeaponManager : MonoBehaviour
         {
             if(SaveScript.inventoryOpen == false)
             {
-                if (SaveScript.currentAmmo[SaveScript.weaponID] > 0)
+                if (SaveScript.currentAmmo[SaveScript.weaponID] > 0 && SaveScript.stamina > 20)
                 {
                     anim.SetTrigger("Attack");
                     audioPlayer.clip = weaponSounds[SaveScript.weaponID];

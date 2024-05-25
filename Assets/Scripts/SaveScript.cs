@@ -69,6 +69,12 @@ public class SaveScript : MonoBehaviour
         {
             FirstPersonController.FPSstamina = stamina;
         }
+        if(Input.GetMouseButtonDown(0) && stamina > 10)
+        {
+            FirstPersonController.FPSstamina -= 10;
+            stamina = FirstPersonController.FPSstamina;
+        }
+
         if(infection < 50)
         {
             infection += 0.1f * Time.deltaTime;
