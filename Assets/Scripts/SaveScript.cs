@@ -19,6 +19,7 @@ public class SaveScript : MonoBehaviour
     public static float infection;
     public static int health;
     public static GameObject doorObject;
+    public static bool gunUsed = false;
     public static List<GameObject> zombiesChasing = new List<GameObject>();
 
     // Start is called before the first frame update
@@ -69,7 +70,7 @@ public class SaveScript : MonoBehaviour
         {
             FirstPersonController.FPSstamina = stamina;
         }
-        if(Input.GetMouseButtonDown(0) && stamina > 10)
+        if(Input.GetMouseButtonDown(0) && stamina > 10 && weaponID < 4 && inventoryOpen == false)
         {
             FirstPersonController.FPSstamina -= 10;
             stamina = FirstPersonController.FPSstamina;

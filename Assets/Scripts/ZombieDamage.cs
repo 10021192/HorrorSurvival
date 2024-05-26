@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
 
 public class ZombieDamage : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class ZombieDamage : MonoBehaviour
     private Animator zombieAnim;
     private AudioSource damagePlayer;
     private bool death = false;
+    private bool flameDeath = false;
     public GameObject bloodSplat;
     public string[] weaponTag;
     public int[] damageAmounts;
@@ -64,6 +66,38 @@ public class ZombieDamage : MonoBehaviour
                     }
                 }
             }
+        }
+    }
+
+    public void gunDamage(Vector3 hitPoint)
+    {
+        zombieHealth -= 100;
+        if(death == false)
+        {
+            Instantiate(bloodSplat, hitPoint, this.transform.rotation);
+            death = true;
+            zombieAnim.SetTrigger("dead");
+            zombieAnim.SetBool("isDead", true);
+        }
+    }
+
+    public void FlameDeath()
+    {
+        if(flameDeath == false)
+        {
+            flameDeath = true;
+            StartCoroutine(ZombieFireWalk());
+        }
+    }
+
+    IEnumerator ZombieFireWalk()
+    {
+        yield return new WaitForSeconds(5);
+        if (death == false)
+        {
+            death = true;
+            zombieAnim.SetTrigger("fireDie");
+            zombieAnim.SetBool("isDead", true);
         }
     }
 }

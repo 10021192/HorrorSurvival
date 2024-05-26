@@ -25,6 +25,9 @@ public class PickupsScript : MonoBehaviour
     public Text doorMessage;
     public AudioClip[] pickupSounds;
 
+    private RaycastHit gunHit;
+    private RaycastHit[] shotgunHits;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -79,7 +82,14 @@ public class PickupsScript : MonoBehaviour
                     mainTitle.text = ammoTitles[objID];
                     if (Input.GetKeyDown(KeyCode.E))
                     {
-                        SaveScript.ammoAmounts[objID]++;
+                        if(objID == 0)
+                        {
+                            SaveScript.ammoAmounts[0] += 12;
+                        }
+                        if (objID == 1)
+                        {
+                            SaveScript.ammoAmounts[1] += 8;
+                        }
                         audioPlayer.clip = pickupSounds[3];
                         audioPlayer.Play();
                         SaveScript.change = true;
@@ -126,6 +136,32 @@ public class PickupsScript : MonoBehaviour
                 pickupPanel.SetActive(false);
                 doorMessageObj.SetActive(false);
                 SaveScript.doorObject = null;
+            }
+        }
+
+        if(Physics.SphereCast(transform.position, 0.01f, transform.forward, out gunHit, 500))
+        {
+            if(gunHit.transform.gameObject.name == "Body" && SaveScript.weaponID == 4)
+            {
+                if(Input.GetMouseButtonDown(0) && SaveScript.currentAmmo[4] > 0)
+                {
+                    gunHit.transform.gameObject.GetComponent<ZombieGunDamage>().SendGunDamage(gunHit.point);
+                }
+            }
+        }
+        if(SaveScript.weaponID == 5 && SaveScript.currentAmmo[5] > 0)
+        {
+            shotgunHits = Physics.SphereCastAll(transform.position, 0.3f, transform.forward, 50);
+
+            for(int i = 0; i < shotgunHits.Length; i++)
+            {
+                if (shotgunHits[i].transform.gameObject.name == "Body")
+                {
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        shotgunHits[i].transform.gameObject.GetComponent<ZombieGunDamage>().SendGunDamage(shotgunHits[i].point);
+                    }
+                }
             }
         }
     }

@@ -40,6 +40,7 @@ public class ZombieScript : MonoBehaviour
     private float attackDistance = 2.0f;
     private float rotateSpeed = 2.5f;
     private AudioSource zombieSound;
+    private float gunAlertRange = 100;
 
     // Start is called before the first frame update
     void Start()
@@ -183,6 +184,16 @@ public class ZombieScript : MonoBehaviour
             CancelInvoke();
             Destroy(gameObject, 20);
         }
+
+        if(SaveScript.gunUsed == true)
+        {
+            zombieAlertRange = gunAlertRange;
+            StartCoroutine(ResetGunRange());
+        }
+        else
+        {
+            zombieAlertRange = 20;
+        }
     }
 
     void SetAnimState()
@@ -213,5 +224,11 @@ public class ZombieScript : MonoBehaviour
     public void WalkOff()
     {
         agent.isStopped = true;
+    }
+
+    IEnumerator ResetGunRange()
+    {
+        yield return new WaitForSeconds(10);
+        SaveScript.gunUsed = false;
     }
 }
