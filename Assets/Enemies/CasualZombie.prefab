@@ -876,6 +876,7 @@ MonoBehaviour:
   yAdjustment: 0.1
   randomState: 1
   randomTiming: 8
+  isAngry: 0
 --- !u!195 &1603052255
 NavMeshAgent:
   m_ObjectHideFlags: 0

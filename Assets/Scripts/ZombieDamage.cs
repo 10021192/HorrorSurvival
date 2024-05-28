@@ -54,6 +54,7 @@ public class ZombieDamage : MonoBehaviour
                     zombieHealth -= damageAmounts[i];
                     Vector3 pos = other.ClosestPoint(transform.position);
                     Instantiate(bloodSplat, pos, other.transform.rotation);
+                    this.transform.gameObject.GetComponentInParent<ZombieScript>().isAngry = true;
                     damagePlayer.clip = damageSounds[i];
                     damagePlayer.Play();
                     if (weaponTag[i] == "bat")
