@@ -4964,7 +4964,7 @@ GameObject:
   - component: {fileID: 4309273583539996051}
   m_Layer: 9
   m_Name: MaleCopZombie Shuffle
-  m_TagString: Untagged
+  m_TagString: zombie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5125,6 +5125,7 @@ MonoBehaviour:
   randomState: 1
   randomTiming: 33
   isAngry: 0
+  startInHouse: 0
 --- !u!195 &4309273583539996051
 NavMeshAgent:
   m_ObjectHideFlags: 0

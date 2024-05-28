@@ -2995,7 +2995,7 @@ GameObject:
   - component: {fileID: 2453361286010451218}
   m_Layer: 9
   m_Name: Zombie2 Idle
-  m_TagString: Untagged
+  m_TagString: zombie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3080,6 +3080,7 @@ MonoBehaviour:
   randomState: 0
   randomTiming: 36
   isAngry: 0
+  startInHouse: 1
 --- !u!82 &2453361286010451218
 AudioSource:
   m_ObjectHideFlags: 0

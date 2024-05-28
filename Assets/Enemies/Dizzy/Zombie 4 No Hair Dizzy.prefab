@@ -33364,7 +33364,7 @@ GameObject:
   - component: {fileID: 7423436993028316457}
   m_Layer: 9
   m_Name: Zombie 4 No Hair Dizzy
-  m_TagString: Untagged
+  m_TagString: zombie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33525,6 +33525,7 @@ MonoBehaviour:
   randomState: 1
   randomTiming: 20
   isAngry: 0
+  startInHouse: 0
 --- !u!195 &7423436993028316457
 NavMeshAgent:
   m_ObjectHideFlags: 0

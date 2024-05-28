@@ -3461,7 +3461,7 @@ GameObject:
   - component: {fileID: 3805208575751382283}
   m_Layer: 9
   m_Name: ZombieThin Dizzy
-  m_TagString: Untagged
+  m_TagString: zombie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3621,6 +3621,7 @@ MonoBehaviour:
   randomState: 1
   randomTiming: 27
   isAngry: 0
+  startInHouse: 0
 --- !u!195 &3805208575751382283
 NavMeshAgent:
   m_ObjectHideFlags: 0

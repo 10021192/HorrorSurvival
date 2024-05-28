@@ -1308,7 +1308,7 @@ GameObject:
   - component: {fileID: 6394520849068673465}
   m_Layer: 9
   m_Name: Zombie 4 Alert
-  m_TagString: Untagged
+  m_TagString: zombie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1469,6 +1469,7 @@ MonoBehaviour:
   randomState: 1
   randomTiming: 26
   isAngry: 0
+  startInHouse: 0
 --- !u!195 &6394520849068673465
 NavMeshAgent:
   m_ObjectHideFlags: 0

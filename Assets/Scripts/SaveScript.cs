@@ -24,6 +24,8 @@ public class SaveScript : MonoBehaviour
     private bool hasSmashed = false;
     public static bool isHidden = false;
     public static List<GameObject> zombiesChasing = new List<GameObject>();
+    public static int zombiesInGameAmt = 0;
+    private GameObject[] zombies;
 
     // Start is called before the first frame update
     void Start()
@@ -50,6 +52,23 @@ public class SaveScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(zombiesInGameAmt > 120)
+        {
+            zombies = GameObject.FindGameObjectsWithTag("zombie");
+            for(int i = 120; i < zombies.Length; i++)
+            {
+                Destroy(zombies[i]);
+            }
+        }
+        if(zombiesInGameAmt > 120)
+        {
+            Debug.Log("Gone over 120");
+        }
+
+        if(zombiesInGameAmt < 0)
+        {
+            zombiesInGameAmt = 0;
+        }
         if(FirstPersonController.inventorySwitchedOn == true)
         {
             inventoryOpen = true;

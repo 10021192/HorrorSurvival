@@ -774,7 +774,7 @@ GameObject:
   - component: {fileID: 5474049307888801951}
   m_Layer: 9
   m_Name: FemaleCop Dizzy
-  m_TagString: Untagged
+  m_TagString: zombie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -934,6 +934,7 @@ MonoBehaviour:
   randomState: 1
   randomTiming: 28
   isAngry: 0
+  startInHouse: 0
 --- !u!195 &5474049307888801951
 NavMeshAgent:
   m_ObjectHideFlags: 0
